@@ -7,3 +7,4 @@ AllowTcpForwarding no
 ForceCommand internal-sftp
 HostKey /sftpd/etc/ssh/ssh_host_rsa_key
 PidFile /sftpd/var/run/sshd.pid
+Port 2022
