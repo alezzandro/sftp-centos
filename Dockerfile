@@ -1,16 +1,15 @@
 FROM centos:centos7
-MAINTAINER Martin Hovmöller
+MAINTAINER Alessandro Arrichiello
 
 RUN yum -y install openssh-server
 
-RUN mkdir -p /var/run/sshd
+RUN mkdir -p /sftpd
+RUN chmod 777 /sftpd
 RUN groupadd --system sftp
 
 ADD . /root
 WORKDIR /root
-RUN mv sshd_config /etc/ssh/sshd_config
-RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
-EXPOSE 22
+EXPOSE 2022
 
 CMD ["/bin/bash", "run"]

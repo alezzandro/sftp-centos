@@ -1,7 +1,9 @@
 PermitRootLogin no
-UsePrivilegeSeparation sandbox
+UsePrivilegeSeparation no
 Subsystem sftp internal-sftp
 ChrootDirectory %h
 X11Forwarding no
 AllowTcpForwarding no
 ForceCommand internal-sftp
+HostKey /sftpd/etc/ssh/ssh_host_rsa_key
+PidFile /sftpd/var/run/sshd.pid
