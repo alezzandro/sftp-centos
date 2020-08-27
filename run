@@ -6,4 +6,4 @@ cp /root/sshd_config /sftpd/etc/ssh/sshd_config
 ssh-keygen -t rsa -f /sftpd/etc/ssh/ssh_host_rsa_key
 
 # Run SSH
-/usr/sbin/sshd -D
+/usr/sbin/sshd -f /sftpd/etc/ssh/sshd_config -D
